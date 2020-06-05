@@ -36,7 +36,7 @@ const Adjustable: React.FC<ReactAdjustable.ParentProps> = ({
   React.useEffect(() => {
     // on initial mount ensure proper flex layout
     onResize();
-  }, []);
+  }, [onResize]);
 
   React.useEffect(() => {
     window.addEventListener('resize', debounce(onResize, 200));
@@ -44,7 +44,7 @@ const Adjustable: React.FC<ReactAdjustable.ParentProps> = ({
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  });
+  }, [onResize]);
 
   return (
     <Parent as={as} ref={parent} flexDirection={flexDirection} height={height}>
