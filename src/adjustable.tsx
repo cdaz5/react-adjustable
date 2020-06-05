@@ -10,12 +10,13 @@ const Adjustable: React.FC<ReactAdjustable.ParentProps> = ({
   height = '100%',
 }) => {
   // TODO: i'm having an issue typing this due to it being passed to a styled component
-  const parent = React.useRef<any>(null);
+  const parent = React.useRef<HTMLElement>(null);
 
   const onResize = React.useCallback(() => {
     if (!parent.current) return;
 
-    const totalMinWidths = [...parent.current.children]
+    // TypeScript doesn't recognize the spread operation conversion so use Array.from
+    const totalMinWidths = Array.from(parent.current.children)
       .map(c =>
         Number(
           getComputedStyle(c)
@@ -38,12 +39,9 @@ const Adjustable: React.FC<ReactAdjustable.ParentProps> = ({
   }, []);
 
   React.useEffect(() => {
-    console.log('ADDED');
     window.addEventListener('resize', debounce(onResize, 200));
 
     return () => {
-      console.log('REMOVED');
-
       window.removeEventListener('resize', onResize);
     };
   });

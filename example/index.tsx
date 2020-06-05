@@ -34,9 +34,9 @@ const Content = () => (
 );
 
 const App = () => {
+  // you can even pass a ref!!
   const child = React.useRef();
 
-  React.useEffect(() => console.log({ child }));
   return (
     <Adjustable height="100vh" as="main">
       <Child
