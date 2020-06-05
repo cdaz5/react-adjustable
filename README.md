@@ -2,7 +2,7 @@
 
 Check out the [demo](UPDATE_ME).
 
-A react library that allows you to place custom adjustable grid components throughout your codebase.
+A react library that allows you to place custom adjustable/resizeable grid components throughout your codebase.
 
 `react-adjustable` exports two components, `Adjustable`, the parent container and, `Child`, the wrapper for any children. See [demo](UPDATE_ME) for examples.
 
