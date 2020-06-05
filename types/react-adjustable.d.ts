@@ -16,7 +16,7 @@ declare namespace ReactAdjustable {
   interface ChildProps {
     adjust: {
       width: string;
-      resizeDir: ResizeDirection;
+      resizeDir?: ResizeDirection;
       resizeable?: boolean;
       minWidth?: string;
       height?: string;

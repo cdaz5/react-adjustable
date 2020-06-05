@@ -14,7 +14,7 @@ export const StyledChild = styled.div<ReactAdjustable.ChildProps['adjust']>`
   height: ${({ height }) => height ?? '100%'};
   overflow: scroll;
   width: ${({ width }) => width};
-  min-width: ${({ minWidth }) => minWidth};
+  min-width: ${({ minWidth }) => minWidth ?? 'min-content'};
   flex-grow: 1;
 
   ${({ resizeable, resizeDir }) =>
