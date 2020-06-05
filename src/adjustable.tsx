@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { Parent } from './styles';
-import Child from './child';
 import { debounce } from './debounce';
 
 const Adjustable: React.FC<ReactAdjustable.ParentProps> = ({
@@ -48,11 +47,6 @@ const Adjustable: React.FC<ReactAdjustable.ParentProps> = ({
       window.removeEventListener('resize', onResize);
     };
   });
-
-  // const content = React.Children.map(children, child => {
-  //   // @ts-ignore
-  //   return React.cloneElement(<Child />, { ...child.props.adjust }, child);
-  // });
 
   return (
     <Parent as={as} ref={parent} flexDirection={flexDirection} height={height}>
